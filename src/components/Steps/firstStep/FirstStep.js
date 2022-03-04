@@ -4,33 +4,29 @@ import SimpleInput from "../../SimpleInput/SimpleInput";
 
 const FirstStep = ({
   OnUpdateActiveStep,
-  onGetGeneralInfo,
-  generalInfo,
+  onGetFirstStepInfo,
+  firstStepInfo,
   activeIndex,
 }) => {
   const {
     register,
     handleSubmit,
     formState: { errors },
-    setValue,
-    getValues,
   } = useForm({
-    defaultValues: generalInfo
+    defaultValues: firstStepInfo
       ? {
-          companyName: generalInfo["companyName"],
-          companyIntroduction: generalInfo["companyIntroduction"],
-          serviceDescription: generalInfo["serviceDescription"],
-          companySize: generalInfo["companySize"],
-          lifeScienceSector: generalInfo["lifeScienceSector"],
-          profilePicture: generalInfo["profilePicture"],
-          attachFiles: generalInfo["attachFiles"],
+          firstName: firstStepInfo["firstName"],
+          lastName: firstStepInfo["lastName"],
+          UserName: firstStepInfo["UserName"],
+          password: firstStepInfo["password"],
+          confirmPassword: firstStepInfo["confirmPassword"],
         }
       : {},
   });
 
   const onSubmit = (submittedForm) => {
     console.log("generalInfo", submittedForm);
-    onGetGeneralInfo(submittedForm);
+    onGetFirstStepInfo(submittedForm);
     OnUpdateActiveStep(2);
   };
 
@@ -92,26 +88,48 @@ const FirstStep = ({
           />
         </div>
         <div className="col-12">
-        <SimpleInput
-        validation={{
-          required: true,
-          pattern: {
-            value:
-              /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/,
-            message: "Please enter a valid password",
-          },
-        }}
-        input={{
-          type: "password",
-          label: "Password",
-          name: "password",
-          placeholder : "Password",
-          id: "setPassword",
-          autoComplete: "off",
-        }}
-        errors={errors}
-        register={register}
-      />
+          <SimpleInput
+            validation={{
+              required: true,
+              pattern: {
+                value:
+                  /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/,
+                message: "Please enter a valid password",
+              },
+            }}
+            input={{
+              type: "password",
+              label: "Password",
+              name: "password",
+              placeholder: "Password",
+              id: "setPassword",
+              autoComplete: "off",
+            }}
+            errors={errors}
+            register={register}
+          />
+        </div>
+        <div className="col-12">
+          <SimpleInput
+            validation={{
+              required: true,
+              pattern: {
+                value:
+                  /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/,
+                message: "Please enter a valid password",
+              },
+            }}
+            input={{
+              type: "password",
+              label: "Confirm Password",
+              name: "confirmPassword",
+              placeholder: "Confirm Password",
+              id: "Confirm Password",
+              autoComplete: "off",
+            }}
+            errors={errors}
+            register={register}
+          />
         </div>
       </div>
       <div className="text-end">
