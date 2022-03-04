@@ -40,7 +40,7 @@ const FirstStep = ({
       onSubmit={handleSubmit(onSubmit)}
     >
       <div className="row">
-        <div className="col-md-6 col-12">
+        <div className=" col-12">
           <SimpleInput
             validation={{
               required: true,
@@ -57,7 +57,7 @@ const FirstStep = ({
             register={register}
           />
         </div>
-        <div className="col-md-6 col-12 ">
+        <div className=" col-12 ">
           <SimpleInput
             validation={{
               required: true,
@@ -73,6 +73,45 @@ const FirstStep = ({
             errors={errors}
             register={register}
           />
+        </div>
+        <div className=" col-12 ">
+          <SimpleInput
+            validation={{
+              required: true,
+            }}
+            input={{
+              type: "text",
+              label: "User Name",
+              name: "UserName",
+              placeholder: "User Name",
+              id: "UserName",
+              autoComplete: "off",
+            }}
+            errors={errors}
+            register={register}
+          />
+        </div>
+        <div className="col-12">
+        <SimpleInput
+        validation={{
+          required: true,
+          pattern: {
+            value:
+              /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/,
+            message: "Please enter a valid password",
+          },
+        }}
+        input={{
+          type: "password",
+          label: "Password",
+          name: "password",
+          placeholder : "Password",
+          id: "setPassword",
+          autoComplete: "off",
+        }}
+        errors={errors}
+        register={register}
+      />
         </div>
       </div>
       <div className="text-end">
