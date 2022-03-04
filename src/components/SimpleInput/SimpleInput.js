@@ -35,7 +35,7 @@ const SimpleInput = ({ validation, input, errors, register }) => {
       )}
       {input.id === "setPassword" && (
         <ReactTooltip
-          arrowColor="#369CBB"
+          arrowColor="#5F727A"
           className={classes.toopltip}
           effect="solid"
           place="right"
