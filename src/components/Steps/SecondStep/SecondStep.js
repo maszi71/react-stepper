@@ -22,7 +22,7 @@ const SecondStep = ({
   const onSubmit = (submittedForm) => {
     console.log("generalInfo", submittedForm);
     onGetSecondStepInfo(submittedForm);
-    OnUpdateActiveStep(2);
+    OnUpdateActiveStep(3);
   };
   const backButton = () => {
     OnUpdateActiveStep(1);
@@ -133,6 +133,7 @@ const SecondStep = ({
         >
           Back
         </button>
+        <button onClick={()=> { OnUpdateActiveStep(3)}}>ggg</button>
         <button className={`btn ${classes.submit}`} type="submit">
           Continue
         </button>

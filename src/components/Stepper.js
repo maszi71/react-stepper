@@ -4,6 +4,7 @@ import StepTitle from "./StepTitle/StepTitle";
 import Card from "./Card/Card";
 import FirstStep from "./Steps/FirstStep/FirstStep";
 import SecondStep from "./Steps/SecondStep/SecondStep";
+import Done from "./Steps/Done/Done";
 
 const Stepper = () => {
   const [activeIndex, setActiveIndex] = useState(1);
@@ -53,6 +54,13 @@ const Stepper = () => {
                 secondStepInfo={secondStepInfo}
                 activeIndex={activeIndex}
               />
+              {firstStepInfo && secondStepInfo && (
+                <Done
+                  firstStepInfo={firstStepInfo}
+                  secondStepInfo={secondStepInfo}
+                  activeIndex={activeIndex}
+                />
+              )}
             </Card>
           </div>
         </div>

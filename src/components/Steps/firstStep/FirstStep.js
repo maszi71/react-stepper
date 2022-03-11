@@ -17,7 +17,7 @@ const FirstStep = ({
       ? {
           firstName: firstStepInfo["firstName"],
           lastName: firstStepInfo["lastName"],
-          UserName: firstStepInfo["UserName"],
+          userName: firstStepInfo["userName"],
           password: firstStepInfo["password"],
           confirmPassword: firstStepInfo["confirmPassword"],
         }
@@ -78,7 +78,7 @@ const FirstStep = ({
             input={{
               type: "text",
               label: "User Name*",
-              name: "UserName",
+              name: "userName",
               placeholder: "User Name",
               id: "UserName",
               autoComplete: "off",

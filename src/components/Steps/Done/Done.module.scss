@@ -1,0 +1,28 @@
+@import "../../../styles/colors.scss";
+
+.table {
+
+width: 600px;
+margin: 0 auto;
+border: 1px solid $primary;
+border-radius: 4px;
+
+.tr {
+    &:nth-child(2n+1) {
+        background-color: $highlight;
+    }
+}
+
+    .th {
+        width: 300px;
+        color: $primary;
+        padding: 15px;
+     
+    }
+    
+    .td {
+        width: 300px;
+        color: $primary;
+        padding: 15px;
+    }
+}
