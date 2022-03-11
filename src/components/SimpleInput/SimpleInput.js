@@ -24,9 +24,6 @@ const SimpleInput = ({ validation, input, errors, register }) => {
           </span>
         )}
       </label>
-      {errors[input.name] && errors[input.name].type === "required" && (
-        <span className={classes["single-input-error"]}>This is required</span>
-      )}
       {errors[input.name] && errors[input.name].message && (
         <span className={classes["single-input-error"]}>
           {" "}

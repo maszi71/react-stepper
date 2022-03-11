@@ -43,7 +43,7 @@ const FirstStep = ({
             }}
             input={{
               type: "text",
-              label: "First Name",
+              label: "First Name*",
               name: "firstName",
               placeholder: "First Name",
               id: "firstName",
@@ -60,7 +60,7 @@ const FirstStep = ({
             }}
             input={{
               type: "text",
-              label: "Last Name",
+              label: "Last Name*",
               name: "lastName",
               placeholder: "Last Name",
               id: "lastName",
@@ -77,7 +77,7 @@ const FirstStep = ({
             }}
             input={{
               type: "text",
-              label: "User Name",
+              label: "User Name*",
               name: "UserName",
               placeholder: "User Name",
               id: "UserName",
@@ -99,7 +99,7 @@ const FirstStep = ({
             }}
             input={{
               type: "password",
-              label: "Password",
+              label: "Password*",
               name: "password",
               placeholder: "Password",
               id: "setPassword",
@@ -121,7 +121,7 @@ const FirstStep = ({
             }}
             input={{
               type: "password",
-              label: "Confirm Password",
+              label: "Confirm Password*",
               name: "confirmPassword",
               placeholder: "Confirm Password",
               id: "Confirm Password",

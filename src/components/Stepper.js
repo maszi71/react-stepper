@@ -22,17 +22,17 @@ const Stepper = () => {
         <div className="row justify-content-center">
           <div className="col-xl-8">
             <Card className={classes["title-card"]}>
-              <StepTitle index="1" activeIndex={activeIndex} title="Step1" />
+              <StepTitle index="1" activeIndex={activeIndex} title="Step 1" />
               <div
-                style={{ background: activeIndex > 1 ? "#204B90" : "#C4C4C4" }}
+                style={{ background: activeIndex > 1 ? "#255F7A" : "#C4C4C4" }}
                 className={classes.line}
               ></div>
-              <StepTitle index="2" activeIndex={activeIndex} title="Step2" />
+              <StepTitle index="2" activeIndex={activeIndex} title="Step 2" />
               <div
-                style={{ background: activeIndex > 2 ? "#204B90" : "#C4C4C4" }}
+                style={{ background: activeIndex > 2 ? "#255F7A" : "#C4C4C4" }}
                 className={classes.line}
               ></div>
-              <StepTitle index="3" activeIndex={activeIndex} title="Step3" />
+              <StepTitle index="3" activeIndex={activeIndex} title="Done" />
             </Card>
           </div>
           <div className="col-xl-8">
