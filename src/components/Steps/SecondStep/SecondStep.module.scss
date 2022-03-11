@@ -11,3 +11,14 @@
         color: white;
     }
 }
+
+.back {
+    border-radius: 28px;
+    color: $primary;
+    width: 170px;
+    border: 1px solid $primary;
+    font-weight: bold;
+    &:hover {
+        color: $primary;
+    }
+  }

@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import SimpleInput from "../../SimpleInput/SimpleInput";
 import SimpleDropDownInput from "../../SimpleDropDownInput/SimpleDropDownInput";
 import { GENDERS } from "../../../constants/Gender";
-import { COUNTRIES } from '../../../constants/Countries';
+import { COUNTRIES } from "../../../constants/Countries";
 
 const SecondStep = ({
   OnUpdateActiveStep,
@@ -23,6 +23,9 @@ const SecondStep = ({
     console.log("generalInfo", submittedForm);
     onGetSecondStepInfo(submittedForm);
     OnUpdateActiveStep(2);
+  };
+  const backButton = () => {
+    OnUpdateActiveStep(1);
   };
 
   return (
@@ -105,24 +108,31 @@ const SecondStep = ({
           />
         </div>
         <div className="col-12 h-70">
-        <SimpleDropDownInput
-              validation={{
-                required: true,
-              }}
-              input={{
-                type: "text",
-                label: "Country*",
-                name: "country",
-              }}
-              errors={errors}
-              register={register}
-              setValue={setValue}
-              getValues={getValues}
-              dropDownList={COUNTRIES}
-            />
+          <SimpleDropDownInput
+            validation={{
+              required: true,
+            }}
+            input={{
+              type: "text",
+              label: "Country*",
+              name: "country",
+            }}
+            errors={errors}
+            register={register}
+            setValue={setValue}
+            getValues={getValues}
+            dropDownList={COUNTRIES}
+          />
         </div>
       </div>
-      <div className="text-end">
+      <div className="col-12 d-flex justify-content-between">
+        <button
+          onClick={backButton}
+          className={`btn ${classes.back}`}
+          type="button"
+        >
+          Back
+        </button>
         <button className={`btn ${classes.submit}`} type="submit">
           Continue
         </button>
