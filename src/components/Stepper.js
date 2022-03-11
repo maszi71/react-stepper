@@ -8,6 +8,7 @@ import SecondStep from "./Steps/SecondStep/SecondStep";
 const Stepper = () => {
   const [activeIndex, setActiveIndex] = useState(1);
   const [firstStepInfo, setFirstStepInfo] = useState(null);
+  const [secondStepInfo, setSecondStepInfo] = useState(null);
 
   const UpdateActiveStep = (index) => {
     setActiveIndex(index);
@@ -15,6 +16,9 @@ const Stepper = () => {
 
   const getFirstStepInfo = (info) => {
     setFirstStepInfo(info);
+  };
+  const getSecondStepInfo = (info) => {
+    setSecondStepInfo(info);
   };
   return (
     <section className={classes.section}>
@@ -41,6 +45,12 @@ const Stepper = () => {
                 OnUpdateActiveStep={UpdateActiveStep}
                 onGetFirstStepInfo={getFirstStepInfo}
                 firstStepInfo={firstStepInfo}
+                activeIndex={activeIndex}
+              />
+              <SecondStep
+                OnUpdateActiveStep={UpdateActiveStep}
+                onGetSecondStepInfo={getSecondStepInfo}
+                secondStepInfo={secondStepInfo}
                 activeIndex={activeIndex}
               />
             </Card>

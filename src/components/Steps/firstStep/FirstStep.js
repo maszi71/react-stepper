@@ -137,6 +137,7 @@ const FirstStep = ({
           Continue
         </button>
       </div>
+      <button onClick={()=> { OnUpdateActiveStep(2);}}>ggg</button>
     </form>
   );
 };
