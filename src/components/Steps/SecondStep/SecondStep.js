@@ -30,7 +30,6 @@ const SecondStep = ({
   });
 
   const onSubmit = (submittedForm) => {
-    console.log("generalInfo", submittedForm);
     onGetSecondStepInfo(submittedForm);
     OnUpdateActiveStep(3);
   };

@@ -25,7 +25,6 @@ const FirstStep = ({
   });
 
   const onSubmit = (submittedForm) => {
-    console.log("generalInfo", submittedForm);
     onGetFirstStepInfo(submittedForm);
     OnUpdateActiveStep(2);
   };
