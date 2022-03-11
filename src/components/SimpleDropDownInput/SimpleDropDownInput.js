@@ -1,5 +1,5 @@
 import classes from "./SimpleDropDownInput.module.scss";
-import { useState, useCallback, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 const SimpleDropDownInput = ({
   validation,
@@ -12,25 +12,17 @@ const SimpleDropDownInput = ({
 }) => {
   const [inputTitle, setInputTitle] = useState(input.label);
 
-  const changeInputTitle = useCallback(
-    (item) => {
-      const result = dropDownList.find(({ id }) => id === item);
-      setInputTitle(result.title);
-    },
-    [dropDownList]
-  );
-
   const getFilterItem = (item) => {
     setValue(input.name, item);
-    changeInputTitle(item);
+    setInputTitle(item);
   };
 
   useEffect(() => {
     const item = getValues(input.name);
     if (item) {
-      changeInputTitle(item);
+      setInputTitle(item);
     }
-  }, [changeInputTitle, getValues, input]);
+  }, [getValues, input]);
 
   return (
     <div className={`dropdown ${classes.dropdown}`}>
@@ -58,7 +50,7 @@ const SimpleDropDownInput = ({
             <button
               type="button"
               className={`dropdown-item ${classes.items}`}
-              onClick={() => getFilterItem(item.id)}
+              onClick={() => getFilterItem(item.title)}
             >
               <span>{item.title}</span>
             </button>

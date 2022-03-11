@@ -56,6 +56,7 @@ const Stepper = () => {
               />
               {firstStepInfo && secondStepInfo && (
                 <Done
+                  OnUpdateActiveStep={UpdateActiveStep}
                   firstStepInfo={firstStepInfo}
                   secondStepInfo={secondStepInfo}
                   activeIndex={activeIndex}

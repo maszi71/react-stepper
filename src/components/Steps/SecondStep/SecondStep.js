@@ -17,7 +17,17 @@ const SecondStep = ({
     getValues,
     setValue,
     formState: { errors },
-  } = useForm();
+  } = useForm({
+    defaultValues: secondStepInfo
+      ? {
+          phoneNumber: secondStepInfo["phoneNumber"],
+          website: secondStepInfo["website"],
+          address: secondStepInfo["address"],
+          gender: secondStepInfo["gender"],
+          country: secondStepInfo["country"],
+        }
+      : {},
+  });
 
   const onSubmit = (submittedForm) => {
     console.log("generalInfo", submittedForm);
@@ -133,7 +143,13 @@ const SecondStep = ({
         >
           Back
         </button>
-        <button onClick={()=> { OnUpdateActiveStep(3)}}>ggg</button>
+        <button
+          onClick={() => {
+            OnUpdateActiveStep(3);
+          }}
+        >
+          ggg
+        </button>
         <button className={`btn ${classes.submit}`} type="submit">
           Continue
         </button>
