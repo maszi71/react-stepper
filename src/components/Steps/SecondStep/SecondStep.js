@@ -143,13 +143,6 @@ const SecondStep = ({
         >
           Back
         </button>
-        <button
-          onClick={() => {
-            OnUpdateActiveStep(3);
-          }}
-        >
-          ggg
-        </button>
         <button className={`btn ${classes.submit}`} type="submit">
           Continue
         </button>
