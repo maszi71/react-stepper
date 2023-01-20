@@ -2,7 +2,7 @@ import { useState } from "react";
 import classes from "./Stepper.module.scss";
 import StepTitle from "./StepTitle/StepTitle";
 import Card from "./Card/Card";
-import FirstStep from "./Steps/FirstStep/FirstStep";
+import InitialStep from "./Steps/InitialStep/IntialStep";
 import SecondStep from "./Steps/SecondStep/SecondStep";
 import Done from "./Steps/Done/Done";
 
@@ -42,7 +42,7 @@ const Stepper = () => {
           </div>
           <div className="col-xl-8">
             <Card className={classes["step-card"]}>
-              <FirstStep
+              <InitialStep
                 OnUpdateActiveStep={UpdateActiveStep}
                 onGetFirstStepInfo={getFirstStepInfo}
                 firstStepInfo={firstStepInfo}
